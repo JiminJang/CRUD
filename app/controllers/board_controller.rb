@@ -1,6 +1,6 @@
 class BoardController < ApplicationController
     def index
-        @every= Post.all #모든 게시물을 가져와
+        @every= Post.all.order("id desc") #모든 게시물을 가져와
         
     end
     def show #게시글 상세보기
@@ -21,9 +21,10 @@ class BoardController < ApplicationController
         new_post.title=params[:title]  
         new_post.content=params[:content]
         new_post.save
+        redirect_to '/'
         
     #   redirect_to "/index" #create하고 index파일로 가서 보여주세요
-    redirect_to "/"
+   
     end
     def destroy
         #특정게시글을 삭제하는 프로세스
@@ -32,6 +33,21 @@ class BoardController < ApplicationController
         post.destroy!
         redirect_to '/'
     end
+    
+    def edit
+        @post=Post.find(params[:post_id])    
+    end
+    def update
+        post=Post.find(params[:post_id])
+        post.title=params[:title]
+        post.content=params[:content]
+        post.save
+        redirect_to '/'
+    end
+    
+    
+
+        
   
     
 end

@@ -1,0 +1,37 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h2>Bright Sungshin, Bright Idea!</h2>
+    </div>
+    </div>
+</nav>
+<form action="/board/update/<%= @post.id%>" method="POST">
+<h1 style="text-align:center"><내 머릿 속 이야기 수정하기></h1>
+<div class="container" style="text-align:center">
+  <form action= "/create" method="post">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-3 col-form-label">제목</label>
+      <div class="col-sm-20">
+        <input name="title" class="form-control" id="title" value="<%=@post.title%>">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-3 col-form-label">내용</label>
+      <div class="col-sm-20">
+        <input name="content" class="form-control" id="content" value="<%=@post.content%>">
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      
+    </div>
+    <div class="form-group row">
+      <div class="offset-sm-3 col-sm-20">
+        <button type="submit" class="btn btn-primary">수정완료</button>
+        <br>
+        <br>
+      </div>
+    </div>
+  </form>
+</div>
+</form>

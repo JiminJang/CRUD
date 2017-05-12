@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   get 'board/show/:id'=>'board#show'
   
   post 'comment/create'
+  
+  post 'board/edit/:post_id'=>'board#edit'
+  post 'board/update/:post_id'=>'board#update'
+  
+  
+  
+  
   # root 'board#new'
   # get '/'=>'board#new'
   # post '/create'=>'board#create'
