@@ -1,12 +1,8 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
+
       <h2>Bright Sungshin, Bright Idea!</h2>
-    </div>
-    </div>
-</nav>
-<div style=" text-align:center">
-<h1  style="color:grey">아이디어 대잔치</h1>
+
+
+<h1  >아이디어 대잔치</h1>
 <h4>머릿 속에만 있는 나만의 아이디어를 던져보세요! 익명의 누군가가 그에 공감할 수도, 피드백해줄 수도 있으니깐요,</h4>
 <button type="submit"><a href="/board/new">아이디어 던지러 가기</a></button>
 
@@ -14,11 +10,10 @@
 <br>
 
 <%@every.each do |p| %> 
-<div class="row" style="border: 1px solid grey; border-radius: 10px; text-align:center; width:60%;margin:auto;" >
-    <div class="col-sm-6">
-    <div class="card">
-      <div class="card-block">
-<h3 class="card-title">#<%=p.id%>번째 아이디어</h3>
+
+   
+
+<h3 >#<%=p.id%>번째 아이디어</h3>
 <a href="/board/show/<%=p.id%>"><%=p.title%></a>
 <br>
 <form action="/destroy/<%=p.id%>" method="post">
@@ -26,10 +21,7 @@
     <button type="submit" formaction="/board/edit/<%=p.id%>" formmethod="post">수정</button>
 </form>
 
-</div>
-</div>
-</div>
-</div>
+
+
 <br>
 <%end%>
-</div>

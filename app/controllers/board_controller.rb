@@ -6,6 +6,7 @@ class BoardController < ApplicationController
     def show #게시글 상세보기
         @post=Post.find(params[:id])
         @comment=@post.comment
+        
     end
     
     def new #사용자가 작성할 수 있도록 폼을 제공해주는 부분
@@ -20,6 +21,7 @@ class BoardController < ApplicationController
         new_post=Post.new 
         new_post.title=params[:title]  
         new_post.content=params[:content]
+        new_post.image=params[:pic]
         new_post.save
         redirect_to '/'
         
